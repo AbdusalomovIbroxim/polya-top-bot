@@ -1,5 +1,6 @@
 from aiogram import Router, F
 from aiogram.types import PreCheckoutQuery, Message, InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
+from aiogram.filters import Command
 import requests
 from config import API_BASE_URL
 router = Router()
@@ -30,7 +31,7 @@ import requests
 router = Router()
 
 
-@router.message(commands=["admin"])
+@router.message(Command("admin"))
 async def admin_command(message: Message):
     user_id = message.from_user.id
 
