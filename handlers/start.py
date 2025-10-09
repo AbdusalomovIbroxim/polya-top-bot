@@ -2,7 +2,7 @@ from aiogram import Router, F
 from aiogram.types import PreCheckoutQuery, Message, InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 from aiogram.filters import Command
 import requests
-from config import API_BASE_URL
+from config import API_BASE_URL, ADMIN_PANEL
 router = Router()
 
 
@@ -49,7 +49,7 @@ async def admin_command(message: Message):
                 inline_keyboard=[[
                     InlineKeyboardButton(
                         text="Открыть админку",
-                        web_app=WebAppInfo(url=API_BASE_URL + "admin/")
+                        web_app=WebAppInfo(url=ADMIN_PANEL)
                     )
                 ]]
             )
