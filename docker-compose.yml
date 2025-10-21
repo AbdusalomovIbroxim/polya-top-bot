@@ -1,10 +1,15 @@
 version: "3.9"
 
 services:
-  bot:
-    build: .
-    container_name: telegram_bot
+  polya_bot:
+    build: 
+      context: ./polya-bot 
+      dockerfile: Dockerfile
+    
+    container_name: polya_bot
     restart: always
+    
+    environment:
+      BOT_TOKEN: ${BOT_TOKEN} 
+
     env_file: .env
-    volumes:
-      - .:/app
