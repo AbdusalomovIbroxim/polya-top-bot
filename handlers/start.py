@@ -3,6 +3,7 @@ from aiogram.types import PreCheckoutQuery, Message, InlineKeyboardMarkup, Inlin
 from aiogram.filters import Command
 import requests
 from config import API_BASE_URL, ADMIN_PANEL
+
 router = Router()
 
 
@@ -24,11 +25,7 @@ async def process_successful_payment(message: Message):
     await message.answer("✅ Оплата прошла успешно! Ваша бронь подтверждена.")
 
 
-from aiogram import Router
-from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
-import requests
 
-router = Router()
 
 
 @router.message(Command("admin"))
